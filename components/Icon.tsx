@@ -11,7 +11,7 @@ const Box = tw.div`
   text-center
   items-center
   p-2
-  w-[76px]
+  w-[80px]
   break-all
   pointer-events-none
 `;
