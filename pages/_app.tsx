@@ -3,6 +3,7 @@ import Image from 'next/image';
 import type { AppProps } from 'next/app'
 import { ThemeProvider, GlobalStyle } from '@react95/core';
 import { createGlobalStyle } from 'styled-components'
+import Head from 'next/head';
 
 const CustomGlobalStyle = createGlobalStyle`
   body {
@@ -18,6 +19,16 @@ const CustomGlobalStyle = createGlobalStyle`
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      <Head>
+        <meta charSet="utf-8" />
+        <title>ud2.sh</title>
+        <meta content="ud2.sh" property="og:site_name" />
+        <meta content="ud2.sh" property="og:title" />
+        <meta content="Raise invalid opcode exception." property="og:description" />
+        <meta content="object" property="og:type" />
+        <meta content="https://ud2.sh" property="og:url" />
+        <meta content="#37474f" data-react-helmet="true" name="theme-color" />
+      </Head>
       <ThemeProvider>
         <GlobalStyle />
         <CustomGlobalStyle />
