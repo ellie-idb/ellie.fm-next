@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             alt='The Windows 95 Setup image'
             />
         </div>
-        <div className="fixed z-10">
+        <div className="fixed z-10 overflow-hidden">
           <Component {...pageProps} />
         </div>
       </ThemeProvider>
