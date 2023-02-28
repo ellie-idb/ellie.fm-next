@@ -71,46 +71,46 @@ const Home: NextPage = () => {
         </Icon.Text>
       </Icon.Box>
 
-      <div onClick={() => {
+      <Icon.Wrapper onDoubleClick={() => {
         let elem = document.createElement("a");
         elem.download = "resume.pdf";
         elem.href = "/resume.pdf";
         elem.click();
       }}>
-        <Icon.Box className='pointer-events-none'>
+        <Icon.Box>
           <Wordpad variant='32x32_4' />
           <Icon.Text>
             resume.pdf
           </Icon.Text>
         </Icon.Box>
-      </div>
+      </Icon.Wrapper>
 
-      <div onClick={() => (setNotepadContent('about_me.txt'), setShowNotepad(true))}>
+      <Icon.Wrapper onDoubleClick={() => (setNotepadContent('about_me.txt'), setShowNotepad(true))}>
         <Icon.Box>
           <Notepad variant='32x32_4' />
           <Icon.Text>
             about_me.txt
           </Icon.Text>
         </Icon.Box>
-      </div>
+      </Icon.Wrapper>
 
-      <div onClick={() => (setNotepadContent('contact_me.txt'), setShowNotepad(true))}>
+      <Icon.Wrapper onDoubleClick={() => (setNotepadContent('contact_me.txt'), setShowNotepad(true))}>
         <Icon.Box>
           <Notepad variant='32x32_4' />
           <Icon.Text>
             contact_me.txt
           </Icon.Text>
         </Icon.Box>
-      </div>
+      </Icon.Wrapper>
 
-      <div onClick={() => (setNotepadContent('cherished_music.txt'), setShowNotepad(true))}>
+      <Icon.Wrapper onDoubleClick={() => (setNotepadContent('cherished_music.txt'), setShowNotepad(true))}>
         <Icon.Box>
           <Notepad variant='32x32_4' />
           <Icon.Text>
             cherished_music.txt
           </Icon.Text>
         </Icon.Box>
-      </div>
+      </Icon.Wrapper>
 
       <MainTaskBar />
     </div>
