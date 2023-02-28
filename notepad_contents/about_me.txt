@@ -1,0 +1,5 @@
+Hi! As you've probably seen, I'm Harrison - a 19 year old software engineer.
+
+This is my personal website, designed using the fantastic React95 component set, Next.js, and Tailwind CSS.
+
+Feel free to explore around, but keep in mind that this website is a work in progress, and that I'm adding more & more content as time goes on.
