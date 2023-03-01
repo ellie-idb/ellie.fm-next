@@ -4,12 +4,10 @@ import {
   Wordpad,
   RecycleFull
 } from '@react95/icons';
-import Image from 'next/image';
 import Icon from '../components/Icon';
 import MainTaskBar from '../components/MainTaskBar';
 import WelcomeModal from '../components/WelcomeModal';
 import NotepadModal from '../components/NotepadModal';
-
 import { useReducer, useEffect, useState } from 'react';
 import { ModalContext } from '../components/ModalContext';
 import { createModalStack, modalStackReducer, ModalStack, renderModalStack } from '../components/ModalStack';
@@ -36,10 +34,11 @@ const Home: NextPage = () => {
   const mousePosition = useMousePosition();
 
   useEffect(() => {
-    console.log(window.innerHeight);
-    console.log(window.innerWidth);
+    // create "welcome" modal at roughly the middle of the screen,
+    // plus or minus a few pixels
     dispatch({ type: 'ADD_MODAL', element: <WelcomeModal defaultPosition={{ x: (Math.floor(window.innerWidth / 2) - 150), y: Math.floor(window.innerHeight / 2) - 150 }} /> });
 
+    // and nuke all modals when this page is unmounted
     return () => {
       dispatch({ type: 'CLOSE_ALL_MODALS' });
     };
