@@ -3,7 +3,7 @@ const nextImages = require('next-images');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   images: {
     disableStaticImages: true
@@ -12,10 +12,16 @@ const nextConfig = {
   webpack: (config, options) => {
     config.module.rules.push(
       {
-        test: /\.txt$/i,
+        test: /\.(txt|iso)$/i,
         use: 'raw-loader',
       },
     )
+    config.plugins.push(
+      new options.webpack.DefinePlugin({
+        'DEBUG': false,
+      })
+    )
+    config.resolve.fallback = { fs: false };
     return config;
   }
 }

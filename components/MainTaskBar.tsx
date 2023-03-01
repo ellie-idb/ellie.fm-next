@@ -7,17 +7,28 @@ import {
   HelpBook,
   LoaderBat,
   Settings,
-  User,
 } from '@react95/icons';
+import { useContext } from 'react';
+import { ModalContext } from './ModalContext';
+import VMModal from './VMModal';
 
 const MainTaskBar = () => {
+  const modalCtx = useContext(ModalContext);
+
   return (
     <TaskBar list={
       <List>
         <List.Item icon={<FolderExe2 variant="32x32_4" />}>
           <List>
-            <List.Item icon={<User variant="16x16_4" />}>
-              Nothing here yet! Stay tuned :-)
+            <List.Item onClick={() => {
+              modalCtx.dispatch({ type: 'ADD_MODAL', element: <VMModal vm={'doom_linux'} title={'Doom Linux'} /> })
+            }} icon={<Computer3 variant="32x32_4" />}>
+              Doom Linux
+            </List.Item>
+            <List.Item onClick={() => {
+              modalCtx.dispatch({ type: 'ADD_MODAL', element: <VMModal vm={'buildroot_linux'} title={'Buildroot Linux'} /> })
+            }} icon={<Computer3 variant="32x32_4" />}>
+              Buildroot Linux
             </List.Item>
           </List>
           Programs

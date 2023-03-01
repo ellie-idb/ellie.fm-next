@@ -16,6 +16,7 @@ const CustomGlobalStyle = createGlobalStyle`
   }
 `;
 
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>

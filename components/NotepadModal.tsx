@@ -2,57 +2,64 @@ import { Modal, TextArea, List } from '@react95/core'
 import {
   Notepad,
 } from '@react95/icons';
-import React from 'react';
+import React, { useContext } from 'react';
 import Icon from './Icon';
+// @ts-ignore
+import aboutMeContent from '../notepad_contents/about_me.txt';
+// @ts-ignore
+import contactMeContent from '../notepad_contents/contact_me.txt';
+// @ts-ignore
+import musicContent from '../notepad_contents/music.txt';
+import { ModalContext, RenderedModalContext } from './ModalContext';
 
-type NotepadModalProps = Omit<React.ComponentProps<typeof Modal>, 'closeModal'> & {
-  show: boolean;
-  setShow: React.Dispatch<React.SetStateAction<boolean>>;
-  value: string;
-  setValue?: React.Dispatch<React.SetStateAction<string>>;
+export type NotepadModalProps = Omit<React.ComponentProps<typeof Modal>, 'closeModal' | 'title'> & {
+  file: keyof typeof notepadContents;
 }
 
-const NotepadModal = ( { show, setShow, value: notepadValue, setValue: setNotepadValue, ...props }: NotepadModalProps) => {
-  if (!show) {
-    return ( <></> );
-  }
+const notepadContents = {
+  'about_me.txt': aboutMeContent,
+  'contact_me.txt': contactMeContent,
+  'cherished_music.txt': musicContent,
+};
+
+export const NotepadModal = ({ file, ...props }: NotepadModalProps) => {
+  const renderedCtx = useContext(RenderedModalContext);
+  const modalCtx = useContext(ModalContext);
 
   return (
-      <Modal
-        closeModal={() => setShow(false)}   
-        icon={<Notepad/>}
-        menu={[
-          {
-            name: 'File',
-            list: (
-              <List>
-                <List.Item>Filler</List.Item>
-              </List>
-            ),
-          },
-          {
-            name: 'Edit',
-            list: (
-              <List>
-                <List.Item>Filler</List.Item>
-              </List>
-            ),
-          },
-        ]}
-        {...props}
-      >
-        <TextArea 
-          rows={20}
-          cols={60}
-          value={notepadValue}
-          onChange={({ target: { value }}: { target: { value: string }}) => {
-            if (setNotepadValue) {
-              setNotepadValue(value);
-            }
-          }}
-        />
-
-      </Modal>
+    <Modal
+      closeModal={() => {
+        modalCtx.dispatch({ type: 'CLOSE_MODAL', id: renderedCtx.id });
+      }}
+      title={`Notepad - ${file}`}
+      icon={<Notepad />}
+      menu={[
+        {
+          name: 'File',
+          list: (
+            <List>
+              <List.Item>Filler</List.Item>
+            </List>
+          ),
+        },
+        {
+          name: 'Edit',
+          list: (
+            <List>
+              <List.Item>Filler</List.Item>
+            </List>
+          ),
+        },
+      ]}
+      {...props}
+    >
+      <TextArea
+        rows={20}
+        cols={60}
+        value={notepadContents[file]}
+        onChange={({ target: { value } }: { target: { value: string } }) => {}}
+      />
+    </Modal>
   )
 };
 
