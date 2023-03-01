@@ -132,7 +132,6 @@ export const v86StateReducer: React.Reducer<V86State, V86Action> = (
 
     case 'START_VM': {
       if (ctx.emulator === null) return ctx;
-      if (ctx.emulator.is_running()) return ctx;
       if (ctx.needs_reinit) {
         const { V86Starter } = ctx.v86_library;
         ctx.emulator = new V86Starter(ctx.settings);
@@ -141,6 +140,7 @@ export const v86StateReducer: React.Reducer<V86State, V86Action> = (
         ctx.needs_reregister = true;
         return ctx;
       }
+      if (ctx.emulator.is_running()) return ctx;
 
       ctx.running = true;
       ctx.emulator.run();
@@ -152,6 +152,7 @@ export const v86StateReducer: React.Reducer<V86State, V86Action> = (
       if (!ctx.emulator.is_running()) return ctx;
       ctx.running = false;
       ctx.emulator.stop();
+      ctx.emulator.destroy();
       ctx.needs_reinit = true;
       return ctx;
     }
@@ -223,7 +224,7 @@ export const v86StateReducer: React.Reducer<V86State, V86Action> = (
     }
 
     case 'EMULATOR_READY': {
-      ctx.on_preboot_line!(<span>{`Ready!`}</span>);
+      ctx.on_preboot_line!(<span>{`Ready! Click the Start button within the VM menu to start.`}</span>);
       if (ctx.running) {
         ctx.emulator.run();
       }
