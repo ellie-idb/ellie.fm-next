@@ -1,6 +1,3 @@
-const nextFonts = require('next-fonts');
-const nextImages = require('next-images');
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: false,
@@ -10,11 +7,19 @@ const nextConfig = {
   },
   transpilePackages: ['@react95/core', '@react95/icons'],
   webpack: (config, options) => {
+    config.output.assetModuleFilename = 'static/[hash][ext]';
     config.module.rules.push(
       {
-        test: /\.(txt|iso)$/i,
-        use: 'raw-loader',
+        test: /\.(eot|ttf|woff|woff2|png|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/[hash][ext]',
+        },
       },
+      {
+        test: /\.(txt)$/,
+        type: 'asset/source'
+      }
     )
     config.plugins.push(
       new options.webpack.DefinePlugin({
@@ -26,4 +31,4 @@ const nextConfig = {
   }
 }
 
-module.exports = nextImages(nextFonts(nextConfig));
+module.exports = nextConfig;
