@@ -1,7 +1,8 @@
 import { Modal } from '@react95/core'
-import { Computer3 } from '@react95/icons';
+import { Computer3, User4 } from '@react95/icons';
 import React, { createContext, useEffect, useRef, useState, useContext } from 'react';
 import dynamic from 'next/dynamic';
+import { isMobile } from 'react-device-detect';
 import { ModalContext, RenderedModalContext } from './ModalContext';
 
 type VMModalProps = Omit<React.ComponentProps<typeof Modal>, 'closeModal'> & {
@@ -89,6 +90,33 @@ const VMModal = ({ vm, ...props }: VMModalProps) => {
       }
     }
   }, [v86]);
+
+  if (isMobile) {
+    return (
+      <Modal
+        closeModal={() => modalCtx.dispatch({ type: 'CLOSE_MODAL', id: renderedCtx.id })}
+        icon={<User4 variant='32x32_4' />}
+        width={"200"}
+        {...props}
+      >
+        <div className='flex flex-col'>
+          <div className='flex items-center justify-center'>
+            <User4 variant='32x32_4' />
+            <span className='pl-2'>
+              {`We've detected that you're on a mobile device.`}
+            </span>
+          </div>
+          <span className='pt-2'>
+            {`Unfortunately, due to limitations with JavaScript on mobile devices, this VM will not run properly. Try again on a regular browser.`}
+          </span>
+          <span>
+            {`Sorry :( - hatf0`}
+          </span>
+        </div>
+      </Modal>
+
+    )
+  }
 
   return (
     <VMContext.Provider value={v86}>
