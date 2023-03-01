@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import { isMobile } from 'react-device-detect';
 import { ModalContext, RenderedModalContext } from './ModalContext';
 
-type VMModalProps = Omit<React.ComponentProps<typeof Modal>, 'closeModal'> & {
+type VMModalProps = Omit<React.ComponentProps<typeof Modal>, 'closeModal' | 'icon' | 'width' | 'height'> & {
   vm: V86Props['vm'];
 };
 

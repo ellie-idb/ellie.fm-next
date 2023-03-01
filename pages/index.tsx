@@ -2,7 +2,8 @@ import type { NextPage } from 'next'
 import {
   Notepad,
   Wordpad,
-  RecycleFull
+  RecycleFull,
+  Url102
 } from '@react95/icons';
 import Icon from '../components/Icon';
 import MainTaskBar from '../components/MainTaskBar';
@@ -93,6 +94,15 @@ const Home: NextPage = () => {
             <Notepad variant='32x32_4' />
             <Icon.Text>
               cherished_music.txt
+            </Icon.Text>
+          </Icon.Box>
+        </Icon.Wrapper>
+        
+        <Icon.Wrapper onDoubleClick={() => window.open("https://github.com/hatf0/ud2.sh-next", "_blank") }>
+          <Icon.Box>
+            <Url102 variant='32x32_4' />
+            <Icon.Text>
+              Website Source Code
             </Icon.Text>
           </Icon.Box>
         </Icon.Wrapper>
