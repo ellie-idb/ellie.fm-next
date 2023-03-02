@@ -109,23 +109,25 @@ const Home: NextPage = () => {
           </Icon.Box>
         </Icon.Wrapper>
 
-        <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <VMModal vm={'doom_linux'} title={'Doom Linux'} /> })}>
-          <Icon.Box>
-            <Computer3 variant='32x32_4' />
-            <Icon.Text>
-              Doom Linux VM
-            </Icon.Text>
-          </Icon.Box>
-        </Icon.Wrapper>
+        <div className="flex">
+          <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <VMModal vm={'doom_linux'} title={'Doom Linux'} /> })}>
+            <Icon.Box>
+              <Computer3 variant='32x32_4' />
+              <Icon.Text>
+                Doom Linux VM
+              </Icon.Text>
+            </Icon.Box>
+          </Icon.Wrapper>
 
-        <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <VMModal vm={'buildroot_linux'} title={'Buildroot Linux'} /> })}>
-          <Icon.Box>
-            <Computer3 variant='32x32_4' />
-            <Icon.Text>
-              Buildroot Linux VM
-            </Icon.Text>
-          </Icon.Box>
-        </Icon.Wrapper>
+          <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <VMModal vm={'buildroot_linux'} title={'Buildroot Linux'} /> })}>
+            <Icon.Box>
+              <Computer3 variant='32x32_4' />
+              <Icon.Text>
+                Buildroot Linux VM
+              </Icon.Text>
+            </Icon.Box>
+          </Icon.Wrapper>
+        </div>
         <MainTaskBar />
       </div>
     </ModalContext.Provider>
