@@ -3,11 +3,13 @@ import {
   Notepad,
   Wordpad,
   RecycleFull,
-  Url102
+  Url102,
+  Computer3
 } from '@react95/icons';
 import Icon from '../components/Icon';
 import MainTaskBar from '../components/MainTaskBar';
 import WelcomeModal from '../components/WelcomeModal';
+import VMModal from '../components/VMModal';
 import NotepadModal from '../components/NotepadModal';
 import { useReducer, useEffect, useState } from 'react';
 import { ModalContext } from '../components/ModalContext';
@@ -97,12 +99,30 @@ const Home: NextPage = () => {
             </Icon.Text>
           </Icon.Box>
         </Icon.Wrapper>
-        
+
         <Icon.Wrapper onDoubleClick={() => window.open("https://github.com/hatf0/ud2.sh-next", "_blank") }>
           <Icon.Box>
             <Url102 variant='32x32_4' />
             <Icon.Text>
               Website Source Code
+            </Icon.Text>
+          </Icon.Box>
+        </Icon.Wrapper>
+
+        <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <VMModal vm={'doom_linux'} title={'Doom Linux'} /> })}>
+          <Icon.Box>
+            <Computer3 variant='32x32_4' />
+            <Icon.Text>
+              Doom Linux VM
+            </Icon.Text>
+          </Icon.Box>
+        </Icon.Wrapper>
+
+        <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <VMModal vm={'buildroot_linux'} title={'Buildroot Linux'} /> })}>
+          <Icon.Box>
+            <Computer3 variant='32x32_4' />
+            <Icon.Text>
+              Buildroot Linux VM
             </Icon.Text>
           </Icon.Box>
         </Icon.Wrapper>
