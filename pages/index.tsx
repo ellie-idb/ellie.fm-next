@@ -51,14 +51,6 @@ const Home: NextPage = () => {
     <ModalContext.Provider value={{ stack: modals, dispatch }}>
       {renderModalStack(modals)}
       <div className="flex flex-col items-start">
-
-        <Icon.Box>
-          <RecycleFull />
-          <Icon.Text>
-            Recycle Bin
-          </Icon.Text>
-        </Icon.Box>
-
         <Icon.Wrapper onDoubleClick={() => {
           let elem = document.createElement("a");
           elem.download = "resume.pdf";
