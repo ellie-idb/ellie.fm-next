@@ -29,7 +29,7 @@ const WelcomeModal = ({...props}: WelcomeModalProps) => {
         </div>
         <div className="flex flex-col mt-1 space-y-2">
           <span>
-            {`I'm a 19 year old software engineer, pursuing a degree in Comp. Sci.`}
+            {`I'm a 20 year old software engineer, pursuing a degree in Comp. Sci.`}
           </span>
           <span>
             {`Welcome to my personal website - I hope you enjoy :-)`}

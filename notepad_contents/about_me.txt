@@ -1,4 +1,4 @@
-Hi! As you've probably seen, I'm Harrison - a 19 year old software engineer, currently pursuing a bachelor's degree in Computer Science.
+Hi! As you've probably seen, I'm Harrison - a 20 year old software engineer, currently pursuing a bachelor's degree in Computer Science.
 
 This is my personal website, designed using the fantastic React95 component set, Next.js, Vercel, and Tailwind CSS.
 
