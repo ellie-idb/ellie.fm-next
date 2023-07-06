@@ -23,12 +23,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <title>ud2.sh</title>
-        <meta content="ud2.sh" property="og:site_name" />
-        <meta content="ud2.sh" property="og:title" />
-        <meta content="Raise invalid opcode exception." property="og:description" />
+        <title>hat.fo</title>
+        <meta content="hat.fo" property="og:site_name" />
+        <meta content="hat.fo" property="og:title" />
+        <meta content="Harrison Ford (hatf0)'s home-page" property="og:description" />
         <meta content="object" property="og:type" />
-        <meta content="https://ud2.sh" property="og:url" />
+        <meta content="https://hat.fo" property="og:url" />
         <meta content="#37474f" data-react-helmet="true" name="theme-color" />
         <link rel='icon' type='image/x-icon' href={computer3Data['32x32_4'].imageSrc} />
       </Head>
