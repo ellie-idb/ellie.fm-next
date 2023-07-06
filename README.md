@@ -1,6 +1,6 @@
-# ud2.sh-next
+# hat.fo-next
 
-This is the repository that contains the source code for what's currently hosted on [ud2.sh](https://ud2.sh).
+This is the repository that contains the source code for what's currently hosted on [hat.fo](https://hat.fo).
 
 This website is an evolution on top of my previous work (see: [ud2.sh](https://github.com/hatf0/ud2.sh)), including some neat features like an integrated Linux emulator, allowing you to play shareware Doom via my website.
 

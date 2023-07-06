@@ -92,7 +92,7 @@ const Home: NextPage = () => {
           </Icon.Box>
         </Icon.Wrapper>
 
-        <Icon.Wrapper onDoubleClick={() => window.open("https://github.com/hatf0/ud2.sh-next", "_blank") }>
+        <Icon.Wrapper onDoubleClick={() => window.open("https://github.com/hatf0/hat.fo-next", "_blank") }>
           <Icon.Box>
             <Url102 variant='32x32_4' />
             <Icon.Text>
