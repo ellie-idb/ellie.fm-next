@@ -14,6 +14,7 @@ import NotepadModal from '../components/NotepadModal';
 import { useReducer, useEffect, useState } from 'react';
 import { ModalContext } from '../components/ModalContext';
 import { createModalStack, modalStackReducer, ModalStack, renderModalStack } from '../components/ModalStack';
+import { useRouter } from 'next/router';
 
 const useMousePosition = () => {
   const [
@@ -35,6 +36,7 @@ const useMousePosition = () => {
 const Home: NextPage = () => {
   const [modals, dispatch] = useReducer(modalStackReducer, createModalStack());
   const mousePosition = useMousePosition();
+  const router = useRouter();
 
   useEffect(() => {
     // create "welcome" modal at roughly the middle of the screen,
@@ -100,6 +102,16 @@ const Home: NextPage = () => {
             </Icon.Text>
           </Icon.Box>
         </Icon.Wrapper>
+
+        <Icon.Wrapper onDoubleClick={() => router.push("https://blog.hat.fo") }>
+          <Icon.Box>
+            <Url102 variant='32x32_4' />
+            <Icon.Text>
+              My blog
+            </Icon.Text>
+          </Icon.Box>
+        </Icon.Wrapper>
+
 
         <div className="flex">
           <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <VMModal vm={'doom_linux'} title={'Doom Linux'} /> })}>
