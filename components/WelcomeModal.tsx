@@ -2,6 +2,7 @@ import { InfoBubble, User } from '@react95/icons';
 import { Modal } from '@react95/core';
 import { useContext } from 'react';
 import { ModalContext, RenderedModalContext } from './ModalContext';
+import { backgroundImage } from '@xstyled/styled-components';
 
 export type WelcomeModalProps = Omit<React.ComponentProps<typeof Modal>, 'closeModal' | 'title' | 'icon' | 'height' | 'width'>;
 
@@ -31,7 +32,7 @@ const WelcomeModal = ({...props}: WelcomeModalProps) => {
           <span>
             {`I'm a 20 y/o site reliability engineer, with interests in hardware hacking, network engineering, and breaking compilers.`}
           </span>
-          <span>
+          <span style={{backgroundImage: 'url(/rainbow_sparkles.gif)'}}>
             {`Welcome to my personal website. Have fun! <3`}
           </span>
         </div>
