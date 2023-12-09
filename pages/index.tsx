@@ -52,73 +52,81 @@ const Home: NextPage = () => {
   return (
     <ModalContext.Provider value={{ stack: modals, dispatch }}>
       {renderModalStack(modals)}
-      <div className="flex flex-col items-start">
-        <Icon.Wrapper onDoubleClick={() => {
-          let elem = document.createElement("a");
-          elem.download = "resume.pdf";
-          elem.href = "/resume.pdf";
-          elem.click();
-        }}>
-          <Icon.Box>
-            <Wordpad variant='32x32_4' />
-            <Icon.Text>
-              resume.pdf
-            </Icon.Text>
-          </Icon.Box>
-        </Icon.Wrapper>
+      <div className="flex">
+        <div className="flex flex-col items-start">
+          <Icon.Wrapper onDoubleClick={() => {
+            let elem = document.createElement("a");
+            elem.download = "resume.pdf";
+            elem.href = "/resume.pdf";
+            elem.click();
+          }}>
+            <Icon.Box>
+              <Wordpad variant='32x32_4' />
+              <Icon.Text>
+                resume.pdf
+              </Icon.Text>
+            </Icon.Box>
+          </Icon.Wrapper>
 
-        <Icon.Wrapper onDoubleClick={(e) => dispatch({ type: 'ADD_MODAL', element: <NotepadModal file={'about_me.txt'} defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>
-          <Icon.Box>
-            <Notepad variant='32x32_4' />
-            <Icon.Text>
-              about_me.txt
-            </Icon.Text>
-          </Icon.Box>
-        </Icon.Wrapper>
+          <Icon.Wrapper onDoubleClick={(e) => dispatch({ type: 'ADD_MODAL', element: <NotepadModal file={'about_me.txt'} defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>
+            <Icon.Box>
+              <Notepad variant='32x32_4' />
+              <Icon.Text>
+                about_me.txt
+              </Icon.Text>
+            </Icon.Box>
+          </Icon.Wrapper>
 
-        <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <NotepadModal file={'contact_me.txt'} defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>
-          <Icon.Box>
-            <Notepad variant='32x32_4' />
-            <Icon.Text>
-              contact_me.txt
-            </Icon.Text>
-          </Icon.Box>
-        </Icon.Wrapper>
+          <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <NotepadModal file={'contact_me.txt'} defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>
+            <Icon.Box>
+              <Notepad variant='32x32_4' />
+              <Icon.Text>
+                contact_me.txt
+              </Icon.Text>
+            </Icon.Box>
+          </Icon.Wrapper>
 
-        <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <NotepadModal file={'cherished_music.txt'} defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>
-          <Icon.Box>
-            <Notepad variant='32x32_4' />
-            <Icon.Text>
-              cherished_music.txt
-            </Icon.Text>
-          </Icon.Box>
-        </Icon.Wrapper>
+          <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <NotepadModal file={'cherished_music.txt'} defaultPosition={{ x: mousePosition.x!, y: (mousePosition.y! - 40) }} /> })}>
+            <Icon.Box>
+              <Notepad variant='32x32_4' />
+              <Icon.Text>
+                cherished_music.txt
+              </Icon.Text>
+            </Icon.Box>
+          </Icon.Wrapper>
 
-        <Icon.Wrapper onDoubleClick={() => window.open("https://github.com/hatf0/hat.fo-next", "_blank") }>
-          <Icon.Box>
-            <Url102 variant='32x32_4' />
-            <Icon.Text>
-              Website Source Code
-            </Icon.Text>
-          </Icon.Box>
-        </Icon.Wrapper>
+          <Icon.Wrapper onDoubleClick={() => window.open("https://github.com/hatf0/hat.fo-next", "_blank") }>
+            <Icon.Box>
+              <Url102 variant='32x32_4' />
+              <Icon.Text>
+                source_code.html 
+              </Icon.Text>
+            </Icon.Box>
+          </Icon.Wrapper>
 
-        <Icon.Wrapper onDoubleClick={() => router.push("https://blog.hat.fo") }>
-          <Icon.Box>
-            <Url102 variant='32x32_4' />
-            <Icon.Text>
-              My blog
-            </Icon.Text>
-          </Icon.Box>
-        </Icon.Wrapper>
-
-
-        <div className="flex">
+          <Icon.Wrapper onDoubleClick={() => router.push("https://blog.hat.fo") }>
+            <Icon.Box>
+              <Url102 variant='32x32_4' />
+              <Icon.Text>
+                blog.html
+              </Icon.Text>
+            </Icon.Box>
+          </Icon.Wrapper>
+        </div>
+        <div className="flex flex-col">
+          <Icon.Wrapper onDoubleClick={() => router.push("https://as395388.com") }>
+            <Icon.Box>
+              <Url102 variant='32x32_4' />
+              <Icon.Text>
+                asn.html
+              </Icon.Text>
+            </Icon.Box>
+          </Icon.Wrapper>
           <Icon.Wrapper onDoubleClick={() => dispatch({ type: 'ADD_MODAL', element: <VMModal vm={'doom_linux'} title={'Doom Linux'} /> })}>
             <Icon.Box>
               <Computer3 variant='32x32_4' />
               <Icon.Text>
-                Doom Linux VM
+                doom_linux.vm
               </Icon.Text>
             </Icon.Box>
           </Icon.Wrapper>
@@ -127,13 +135,13 @@ const Home: NextPage = () => {
             <Icon.Box>
               <Computer3 variant='32x32_4' />
               <Icon.Text>
-                Buildroot Linux VM
+                linux.vm
               </Icon.Text>
             </Icon.Box>
           </Icon.Wrapper>
         </div>
-        <MainTaskBar />
       </div>
+      <MainTaskBar />
     </ModalContext.Provider>
   )
 }

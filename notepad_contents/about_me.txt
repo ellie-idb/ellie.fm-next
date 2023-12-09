@@ -1,7 +1,10 @@
-Hi! As you've probably seen, I'm Harrison - a 20 year old software engineer, currently pursuing a bachelor's degree in Computer Science.
+Hi! As you've probably seen, I'm Harrison, a 20 y/o site reliability engineer currently working at Paradoxum Games & Synapse Softworks LLC.
 
-This is my personal website, designed using the fantastic React95 component set, Next.js, Vercel, and Tailwind CSS.
+I'm all over the place with what I do in my free time: network engineering (my AS number is AS395388), hardware hacking, reverse engineering, infrastructure engineering, rock climbing, etc. I don't consider myself a jack of all trades, but moreso that I quickly learn and adapt to any role as needed.
 
-Feel free to explore around, but keep in mind that this website is a work in progress, and that I'm always adding more & more content as time goes on.
+At Paradoxum, I work on infrastructure & metrics / analytics for Tower Defense Simulator, which is a tower defense game built on the Roblox platform with over 2.9 billion visits, and over 3.2 million unique users per month. At peak, we see 120k+ concurrent users playing Tower Defense Simulator, 18k requests made per second, and 1+ million data points generated per second.
+Needless to say, a *lot* of players.
 
-Prospective employers: I'm always open to helping solve novel & interesting challenges. If you have a role that you think I'd be a great fit for, please send an email my way! You can find my email in the contact_me.txt file.
+At Synapse, I help with our recently announced partnership with the Roblox corporation, where I build low-level network tooling for our team to use. Before that, I helped work on Synapse X, which was a script execution software with over 70k+ daily active users. Synapse X regularly saw 150+ TB/mo of traffic, so I had to learn how to manage that and stop our backend from getting overwhelmed.
+
+Prospective employers: I'm always open to helping solve novel & interesting challenges. If you have a role that you think I'd be a great fit for, please send an email my way! You can find my resume in the resume.pdf file, and my email in the contact_me.txt file. Thanks!

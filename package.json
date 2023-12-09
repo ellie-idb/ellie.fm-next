@@ -20,7 +20,8 @@
     "sharp": "^0.31.3",
     "styled-components": "^5.3.6",
     "tailwind-styled-components": "^2.2.0",
-    "v86": "^0.4.0"
+    "v86": "^0.4.0",
+    "yarn": "^1.22.21"
   },
   "devDependencies": {
     "@types/next": "^9.0.0",
